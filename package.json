@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ahmedelbougha/node-ec2-deploy/issues"
   },
-  "homepage": "https://github.com/ahmedelbougha/node-ec2-deploy#readme"
+  "homepage": "https://github.com/ahmedelbougha/node-ec2-deploy#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
