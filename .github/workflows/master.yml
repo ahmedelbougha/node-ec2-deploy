@@ -8,6 +8,13 @@ on:
 
   workflow_dispatch:
 
+    env:
+      DB_NAME: test_db
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_HOST: localhost
+
+
 jobs:
 
   build:
@@ -17,18 +24,13 @@ jobs:
       matrix:
         node-version: [18.x]
 
-    env:
-      DB_DATABASE: test_db
-      DB_USER: root
-      DB_PASSWORD: root
-
     steps:
       - uses: actions/checkout@v3
       - name: Set up MySQL
         run: |
           sudo /etc/init.d/mysql start
-          mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
-          mysql ${{ env.DB_DATABASE }} -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} < backend/dbseed/db.sql
+          mysql -e 'CREATE DATABASE ${{ env.DB_NAME }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
+          mysql ${{ env.DB_NAME }} -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} < backend/dbseed/db.sql
       - run: npm ci --prefix backend
 
       - name: Backend ESLint
