@@ -20,6 +20,3 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Backend ESLint
-      - run: npm run eslint 
-      
