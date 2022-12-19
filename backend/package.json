@@ -15,7 +15,7 @@
     "eslint": "eslint --ext js,ts,tsx src",
     "test": "node -e \"console.log('Please run tests with either test:unit or test:integration')\"",
     "test:unit": "jest __tests__/unit",
-    "test:integration": "jest __tests__/integration",
+    "test:integration": "jest __tests__/integration --forceExit",
     "test:watch": "jest --watch",
     "dev": "nodemon",
     "start": "ts-node src/index.ts"
