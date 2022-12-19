@@ -21,13 +21,13 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Backend ESLint
-      - run: npm run eslint --prefix backend
+        run: npm run eslint --prefix backend
       - name: Backend Unit Tests
-      - run: npm run test:unit --prefix backend
+        run: npm run test:unit --prefix backend
       - name: Backend Integration Tests
-      - run: npm run test:integration --prefix backend
+        run: npm run test:integration --prefix backend
       - name: Backend Installing Dependencies
-      - run: npm ci --prefix backend
+        run: npm ci --prefix backend
       - name: Backend Deployment
         uses: burnett01/rsync-deployments@5.1
         with:
