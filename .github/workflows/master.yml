@@ -31,6 +31,7 @@ jobs:
           mysql -e 'CREATE DATABASE ${{ env.DB_NAME }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
           mysql ${{ env.DB_NAME }} -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }} < backend/dbseed/db.sql
       - run: npm ci --prefix backend
+      - run: npm ci --prefix frontend
 
       - name: Backend ESLint
         run: npm run eslint --prefix backend
