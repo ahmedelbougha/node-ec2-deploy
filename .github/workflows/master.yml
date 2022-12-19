@@ -22,11 +22,11 @@ jobs:
       - run: npm ci 
 
       - name: Backend ESLint
-      - run: npm run eslint 
+        run: npm run eslint 
       - name: Backend Unit Tests
-      - run: npm run test:unit 
+        run: npm run test:unit 
       - name: Backend Integration Tests
-      - run: npm run test:integration 
+        run: npm run test:integration 
       - name: Backend Deployment
         uses: burnett01/rsync-deployments@5.1
         with:
